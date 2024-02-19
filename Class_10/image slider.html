@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #slideshow {
+      max-width: 100%;
+      height: auto;
+    }
+    .slideshow-img {
+      display: none;
+      width: 100%; /* Ensuring all images have the same width */
+      height: auto; /* Maintaining aspect ratio */
+    }
+  </style>
+</head>
+<body>
+  
+  <div id="slideshow">
+    <img class="slideshow-img" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.instagram.com%2Fautomotive.ai%2F&psig=AOvVaw0hbkmgvBOp4rPiNZ7NiHd7&ust=1708433999968000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMD74N66t4QDFQAAAAAdAAAAABAE" alt="">
+    <img class="slideshow-img" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dcar%2Bai&psig=AOvVaw0hbkmgvBOp4rPiNZ7NiHd7&ust=1708433999968000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMD74N66t4QDFQAAAAAdAAAAABAR" alt="">
+    <img class="slideshow-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQoDnFX4aEU2rOOcRpb_-VUopyp6YMwDGx2aKqtz1eYDiXZRF_knMctI3y6S-BJYLN5Oc&usqp=CAU" alt="">
+  </div>
+
+  <div class="prev" onclick="changeSlide(-1)">Previous</div>
+  <div class="next" onclick="changeSlide(1)">Next</div>
+
+<script>
+  let currentImageIndex = 0;
+  const images = document.querySelectorAll('.slideshow-img');
+
+  function showImage(index){
+    images.forEach(image => image.style.display = 'none');
+    images[index].style.display = 'block';
+  }
+
+  function changeSlide(n){
+    currentImageIndex = (currentImageIndex + n + images.length) % images.length;
+    showImage(currentImageIndex);
+  }
+
+  showImage(currentImageIndex); // Show the initial image
+
+  let slideshowInterval = setInterval(() => changeSlide(1), 3000); // Change image every 3 seconds
+
+  // Stop slideshow on mouseover
+  document.getElementById('slideshow').addEventListener('mouseover', () => clearInterval(slideshowInterval));
+
+  // Resume slideshow on mouseout
+  document.getElementById('slideshow').addEventListener('mouseout', () => slideshowInterval = setInterval(() => changeSlide(1), 3000));
+</script>
+
+</body>
+</html>

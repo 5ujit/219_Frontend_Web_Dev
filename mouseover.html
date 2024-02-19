@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event onclick</title>
+  <style>
+    body {
+      transition: background-color 5s; 
+    }
+    div{
+      background-color: brown;
+      border-radius: 5px;
+      border: solid;
+    }
+
+   p{
+    text-align: center;
+   } 
+  </style>
+</head>
+<body>
+
+  <div  >
+    <p>
+      hello vineet babu 
+    </p>
+  </div>
+  
+  <script>
+    // get a reference to the body element 
+    const body = document.body;
+    
+    function handleMouseOver() {
+      body.style.backgroundColor = "skyblue";
+    }
+    
+    body.addEventListener('mouseover', handleMouseOver);
+  </script>
+
+</body>
+</html>

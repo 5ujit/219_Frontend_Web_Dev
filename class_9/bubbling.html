@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="main">
+    <button id="bt1">
+      click me
+    </button>
+  </div>
+ 
+  <script>
+    var bt1 = document.getElementById("bt1");
+    var main = document.getElementById("main");
+
+    bt1.addEventListener("click", function(){
+      this.style.backgroundColor = 'lightgreen';
+    });
+
+    main.addEventListener("click", function(){
+      this.style.backgroundColor = 'yellow';
+    });
+  </script>
+</body>
+</html>

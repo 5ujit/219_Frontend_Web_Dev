@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event onclick</title>
+  <style>
+    div{
+      width: 100px;
+    /* width: 40px; */
+    height: px60;
+    border: 1px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="myDiv" >Move your mouse out of this div to change its background
+      </div>
+  
+  <script>
+    // get a reference to the body element 
+    const div = document.getElementById("myDiv");
+    
+    const originalColor = div.style.backgroundColor;
+    function handleMouseOut(){
+
+    }
+    
+    div.addEventListener('mouseoout', handleMouseOut);
+  </script>
+
+</body>
+</html>
