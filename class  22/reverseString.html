@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- <style>
+ #output{
+  font-size: 18px;
+  margin-top: 20px;
+ } 
+</style> -->
+<body>
+  <div class="container">
+    <input type="text" id="inputString" placeholder="Enter a String">
+    <button onclick="reverseString()">Reverse</button>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    function reverseString(){
+      var input= document.getElementById("inputString").value;
+      var reversed = reverseStringRecursive(input);
+      document.getElementById("output").innerText ="Reversed String:" + reversed;
+    }
+
+    function reverseStringRecursive(str){
+      //
+      if(str === "" || str.length === 1){
+        return str;
+      }
+      return str.slice(-1) + reverseStringRecursive(str.slice(0,-1));
+    }
+
+  </script>
+  
+</body>
+</html>
