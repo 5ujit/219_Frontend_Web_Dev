@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:rgb(152, 203, 133);
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 30px;
+        }
+        h1{
+            color: blue;
+
+        }
+        
+        button {
+            border-radius: 50px;
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: solid black;
+            background-color:rgb(26, 53, 63);
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color:red;
+        }
+
+        img {
+            max-width: 200px;
+            display: block;
+            margin: 10px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Activity 4</h1>
+    <p id="pd">This paragraph is changing dynamically.</p>
+    <button id="textbutton">Change Text</button>
+    <button id="tbutton">Hide Image / Show Image</button>
+    <img id="image" src="https://rb.gy/35jrj2" alt="Example Image">
+    <button id="changecolor">Background-Color</button>
+    <script >
+
+    const dText = document.getElementById('pd');
+    const d1text = document.getElementById('textbutton');
+    const toggleButton = document.getElementById('tbutton');
+    const dImage = document.getElementById('image');
+    const changeColor = document.getElementById('changecolor');
+        
+    d1text.addEventListener('click',function(){
+        dText.textContent ="Changed text after clicking on a button";
+    });
+    toggleButton.addEventListener('click', function() {
+        if (dImage.style.display === 'none') {
+            dImage.style.display = 'block';
+        } else {
+            dImage.style.display = 'none';
+        }
+    });
+
+    changeColor.addEventListener('click', function() {
+        const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        document.body.style.backgroundColor = randomColor;
+    });
+
+    </script>
+</body>
+</html>

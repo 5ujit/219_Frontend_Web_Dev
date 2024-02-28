@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h2>Error Challenge</h2>
+<div>
+    <input type="text" id="numberInput" placeholder="Enter a number">
+    <button onclick="calculateSquare()">Calculate Square</button>
+</div>
+<p id="result"></p>
+
+<script>
+    function calculateSquare() {
+        let number = document.getElementById('numberInput').value;
+        let result = number * number;
+        displayResult(result);
+    }
+
+    function displayResult(result) {
+        document.getElementById('result').innerText = "The square is: " + result;
+    }
+</script>
+
+</body>
+</html>

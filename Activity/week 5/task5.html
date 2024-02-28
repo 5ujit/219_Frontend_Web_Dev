@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 5</title>
+    <style>
+        #div1{
+            border:5px solid black;
+            background-color: cadetblue;
+            height: 500px;
+        }
+        #p1{
+            border: 5px solid black;
+            background-color:palevioletred; 
+            margin: 5px;
+            height: 200px;
+        }
+        #h1{
+            border: 5px solid black;
+            background-color: tomato;
+            margin: 5px;
+            height: 100px;
+        }
+        #mainp{
+            height: 400px;
+            width: 400px;
+            margin: 5px;
+            border: 2px solid black;
+        }
+        .img1{
+            height: 200px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div>
+            <h2>
+                Activity 5
+            </h2>
+        </div>
+    </center>
+    
+    <div id="div3">
+        <img id="mainp" src="https://t3.ftcdn.net/jpg/05/76/33/80/240_F_576338013_RrW9aJSQInAzPQzZz8tAxnNPc8HAluB3.jpg">
+    </div>
+    <div id="div2" onclick="changeImage()" onmouseover="f1()" onmouseout="f2()">
+        <img id="1" class="img1" src="https://t3.ftcdn.net/jpg/06/28/73/80/240_F_628738085_nVHkYNJ3hv6VXu39kVHMYzDoQ82lvktP.jpg">
+        <img id="2" class="img1" src="https://t4.ftcdn.net/jpg/07/11/83/97/240_F_711839717_5sKLjgtlSZ9rkqFpQHDXg2PjMqAFU13e.jpg">
+        <img id="3" class="img1" src="https://t3.ftcdn.net/jpg/05/60/38/00/360_F_560380035_FlTG9sc3iIzK32Um9q4uvJbfRGiZUDPm.webp">
+        <img id="6" class="img1" src="https://t3.ftcdn.net/jpg/05/67/39/14/240_F_567391418_4BBdjhgAWfzaySJxunJ5Nx96wEg5kvG7.jpg">
+    </div>
+    <script>
+        div1.addEventListener("click",function(){
+            this.style.color = "burlywood";
+            this.style.height = '450px';
+        })
+        p1.addEventListener("click",function(){
+            this.style.margin = '10px'; 
+            this.style.height='150px';
+        })
+        h1.addEventListener("click",function(){
+            this.style.margin = '10px'; 
+            this.style.background = " lightgreen";
+            this.style.height='150px';
+        })
+        function changeImage(){
+            if(x.tagName == "IMG"){
+                a=x.getAttribute("src");
+                document.getElementById("mainp").setAttribute("src",a);
+            }
+        }
+        function f1(){
+            x=event.target;
+            x.style.borderColor="red";
+            x.style.cursor="pointer";
+        }
+        function f2(){
+            x=event.target;
+            x.style.borderColor="black";
+        }
+    </script>
+</body>
+</html>
